@@ -28,17 +28,13 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView pokemonListRV;
     PokemonListAdapter pokemonListAdapter;
 
+    private int offset;
+    private boolean pageChange;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl("https://pokeapi.co/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        getData();
 
         pokemonListRV = findViewById(R.id.pokemonListRV);
         pokemonListAdapter = new PokemonListAdapter();
@@ -46,15 +42,45 @@ public class MainActivity extends AppCompatActivity {
         pokemonListRV.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         pokemonListRV.setLayoutManager(layoutManager);
+        pokemonListRV.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if(dy > 0){
+                    int visibleItemCount = layoutManager.getChildCount();
+                    int totalItemCount = layoutManager.getItemCount();
+                    int pastVisibleItem = layoutManager.findFirstVisibleItemPosition();
+
+                    if(pageChange){
+                        if((visibleItemCount + pastVisibleItem) >= totalItemCount){
+                            Log.i("PAGE-->", "PageChange");
+                            pageChange = false;
+                            offset += 20;
+                            getData(offset);
+                        }
+                    }
+
+                }
+            }
+        });
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl("https://pokeapi.co/api/v2/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        pageChange = true;
+        offset = 0;
+        getData(offset);
     }
 
-    private void getData() {
+    private void getData(int offset) {
         PokeApiService service = retrofit.create(PokeApiService.class);
-        Call<PokemonRequests> pokemonRequestsCall =  service.getPokemonList();
+        Call<PokemonRequests> pokemonRequestsCall =  service.getPokemonList(20,offset);
 
         pokemonRequestsCall.enqueue(new Callback<PokemonRequests>() {
             @Override
             public void onResponse(@NonNull Call<PokemonRequests> call, @NonNull Response<PokemonRequests> response) {
+                pageChange = true;
                 if(response.isSuccessful())
                 {
                     PokemonRequests pokemonRequests = response.body();
@@ -74,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<PokemonRequests> call, Throwable t) {
+                pageChange = true;
                 Log.i("Error","onFailure: " + t.getMessage());
             }
         });

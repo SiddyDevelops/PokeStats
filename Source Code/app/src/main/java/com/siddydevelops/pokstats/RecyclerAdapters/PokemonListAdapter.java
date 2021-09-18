@@ -37,7 +37,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
     public void onBindViewHolder(@NonNull PokemonViewHolder holder, int position) {
         Pokemon pokemon = dataset.get(position);
         holder.pokemonName.setText(pokemon.getName());
-        //Glide.with(context).load(imageURL[position]).into(holder.pokemonImageView);
+        Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+ pokemon.getNumber() +".png").into(holder.pokemonImageView);
     }
 
     @Override
