@@ -1,6 +1,7 @@
 package com.siddydevelops.pokstats.RecyclerAdapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.siddydevelops.pokstats.Models.Pokemon;
+import com.siddydevelops.pokstats.PokemonDetailActivity;
 import com.siddydevelops.pokstats.R;
 
 import java.util.ArrayList;
@@ -38,6 +40,16 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
         Pokemon pokemon = dataset.get(position);
         holder.pokemonName.setText(pokemon.getName());
         Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+ pokemon.getNumber() +".png").into(holder.pokemonImageView);
+
+        holder.pokemonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PokemonDetailActivity.class);
+                intent.putExtra("pokeNum", pokemon.getNumber());
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
