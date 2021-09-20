@@ -7,6 +7,17 @@
     android:background="@color/pokemonColor1"
     tools:context=".PokemonDetailActivity">
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_width="62dp"
+        android:layout_height="53dp"
+        android:elevation="25dp"
+        app:SpinKit_Color="@color/pokemonColor1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/pokemonImageView"
@@ -36,7 +47,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_marginTop="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -56,6 +67,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -76,20 +88,20 @@
                         android:src="@drawable/ic_weight" />
 
                     <TextView
+                        android:id="@+id/heightTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/heightTextView"
                         android:layout_gravity="center"
                         android:fontFamily="@font/montserrat_semi_bold_itialic"
                         android:textColor="@color/black"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:background="@color/black"/>
+                    android:background="@color/black" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -103,20 +115,18 @@
                         android:src="@drawable/ic_baseline_height_24" />
 
                     <TextView
+                        android:id="@+id/weightTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/weightTextView"
                         android:layout_gravity="center"
                         android:fontFamily="@font/montserrat_semi_bold_itialic"
                         android:textColor="@color/black"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
 
-
             </androidx.appcompat.widget.LinearLayoutCompat>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
