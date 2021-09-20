@@ -16,5 +16,7 @@
     <color name="textColorItem">#FFFFFF</color>
     <color name="pokemonItemBg">#FFD08A</color>
 
+    <color name="pokemonColor1">#FFAF32</color>
+
 
 </resources>
