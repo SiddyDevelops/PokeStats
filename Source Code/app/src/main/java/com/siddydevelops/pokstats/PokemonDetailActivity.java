@@ -3,14 +3,28 @@ package com.siddydevelops.pokstats;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.siddydevelops.pokstats.Models.PokeDetail;
 import com.siddydevelops.pokstats.Models.PokeStats;
 import com.siddydevelops.pokstats.PokeApi.PokeApiService;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,13 +38,45 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
     //https://pokeapi.co/api/v2/pokemon/{poke_num}  --> DETAIL API
 
+    TextView nameOfPokemon;
+    ImageView pokemonImageView;
+    TextView heightTextView;
+    TextView weightTextView;
+
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_detail);
 
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        //int colorCodeDark = Color.parseColor("#FF9800");
+        window.setStatusBarColor(getResources().getColor(R.color.pokemonColor1));
+
+        progressBar = findViewById(R.id.spin_kit);
+        Sprite fadingCircle = new FadingCircle();
+        progressBar.setIndeterminateDrawable(fadingCircle);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisibility(View.GONE);
+            }
+        }, 2000);
+
         Intent intent = getIntent();
         int pokeNum = intent.getIntExtra("pokeNum",1);
+
+        nameOfPokemon = findViewById(R.id.nameOfPokemon);
+        pokemonImageView = findViewById(R.id.pokemonImageView);
+        heightTextView = findViewById(R.id.heightTextView);
+        weightTextView = findViewById(R.id.weightTextView);
+
+        Glide.with(this).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+ pokeNum +".png").into(pokemonImageView);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/api/v2/")
@@ -54,6 +100,10 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 Log.i("Weight", pokeDetails.getWeight());
                 List<PokeStats> p = pokeDetails.getStats();
                 Log.i("ListDATA", p.toString());
+
+                nameOfPokemon.setText(pokeDetails.getName());
+                heightTextView.setText(pokeDetails.getHeight() + " KG");
+                weightTextView.setText(pokeDetails.getWeight() + " m");
 
             }
 

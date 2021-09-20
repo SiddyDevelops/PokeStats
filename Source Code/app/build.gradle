@@ -43,4 +43,11 @@ dependencies {
     // Retrofit & OkHttp
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Loading animation
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    //MP-Charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
 }

@@ -3,15 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23703703703703705" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable-v24/ic_search.xml" value="0.23703703703703705" />
+        <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/ic_baseline_height_24.xml" value="0.26875" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.26875" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/ic_pokeball.xml" value="0.23703703703703705" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/ic_search.xml" value="0.23703703703703705" />
+        <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/ic_weight.xml" value="0.26875" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/drawable/search_bg.xml" value="0.23703703703703705" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/layout/activity_pokemon_detail.xml" value="0.24871794871794872" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/layout/pokemon_list_item.xml" value="0.4" />
         <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/layout/search_bg.xml" value="0.24871794871794872" />
+        <entry key="..\:/Users/siddh/AndroidStudioProjects/PokStats/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14479166666666668" />
       </map>
     </option>
   </component>
