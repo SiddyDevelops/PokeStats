@@ -2,6 +2,7 @@ package com.siddydevelops.pokstats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,10 +16,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.mikephil.charting.charts.HorizontalBarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.siddydevelops.pokstats.Models.PokeDetail;
@@ -26,8 +23,8 @@ import com.siddydevelops.pokstats.Models.PokeStats;
 import com.siddydevelops.pokstats.PokeApi.PokeApiService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,6 +42,9 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
 
+    ProgressBar donutChart;
+    TextView statTextView1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,13 +59,11 @@ public class PokemonDetailActivity extends AppCompatActivity {
         Sprite fadingCircle = new FadingCircle();
         progressBar.setIndeterminateDrawable(fadingCircle);
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                progressBar.setVisibility(View.GONE);
-            }
-        }, 2000);
+        statTextView1 = findViewById(R.id.statTextView1);
+
+        donutChart = findViewById(R.id.donutChart);
+        ObjectAnimator.ofInt(donutChart,"progress",90).setDuration(1000).start();
+        statTextView1.setText("90");
 
         Intent intent = getIntent();
         int pokeNum = intent.getIntExtra("pokeNum",1);
@@ -104,6 +102,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 nameOfPokemon.setText(pokeDetails.getName());
                 heightTextView.setText(pokeDetails.getHeight() + " KG");
                 weightTextView.setText(pokeDetails.getWeight() + " m");
+                progressBar.setVisibility(View.GONE);
 
             }
 

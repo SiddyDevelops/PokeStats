@@ -7,131 +7,410 @@
     android:background="@color/pokemonColor1"
     tools:context=".PokemonDetailActivity">
 
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/spin_kit"
-        style="@style/SpinKitView.Large.FadingCircle"
-        android:layout_width="62dp"
-        android:layout_height="53dp"
-        android:elevation="25dp"
-        app:SpinKit_Color="@color/pokemonColor1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/pokemonImageView"
-        android:layout_width="214dp"
-        android:layout_height="203dp"
-        android:layout_gravity="top|center"
-        android:layout_marginTop="20dp"
-        android:elevation="20dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/pokemon_buffer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="372dp"
-        android:layout_height="589dp"
-        android:layout_marginTop="20dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginTop="80dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
-            <TextView
-                android:id="@+id/nameOfPokemon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_semi_bold"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textColor="#E64556"
-                android:textSize="22sp"
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.FadingCircle"
+                android:layout_width="62dp"
+                android:layout_height="53dp"
+                android:elevation="25dp"
+                app:SpinKit_Color="@color/pokemonColor1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/linearLayoutCompat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/pokemonImageView"
+                android:layout_width="214dp"
+                android:layout_height="203dp"
+                android:layout_gravity="top|center"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
+                android:elevation="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/pokemon_buffer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="371dp"
+                android:layout_height="621dp"
+                android:layout_marginTop="115dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfPokemon">
+                app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_weight" />
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent">
 
                     <TextView
-                        android:id="@+id/heightTextView"
+                        android:id="@+id/nameOfPokemon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/montserrat_semi_bold_itialic"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="#E64556"
+                        android:textSize="22sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/black" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_baseline_height_24" />
-
-                    <TextView
-                        android:id="@+id/weightTextView"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearLayoutCompat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/montserrat_semi_bold_itialic"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nameOfPokemon">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:src="@drawable/ic_weight" />
+
+                            <TextView
+                                android:id="@+id/heightTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:src="@drawable/ic_baseline_height_24" />
+
+                            <TextView
+                                android:id="@+id/weightTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
 
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="HP"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart1"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart1"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart1"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="Attack"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart1"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart1"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart1" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart2"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart2"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart2"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="Defense"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart2"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart2"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart4"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart4"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart4"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="Special\nAttack"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart4"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart4"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart4" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart5"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart5"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart5"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart5"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart5" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="Special\nDefense"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart5"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart5"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart6"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="20"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart6"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart6"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart6"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart6" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:text="Speed"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart6"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart6"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart6" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </androidx.cardview.widget.CardView>
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
