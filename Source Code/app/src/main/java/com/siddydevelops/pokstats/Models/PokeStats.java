@@ -61,7 +61,7 @@ public class PokeStats {
 
     @Override
     public String toString() {
-        return "BaseState:" + baseStat;
+        return baseStat.toString();
     }
 
 }

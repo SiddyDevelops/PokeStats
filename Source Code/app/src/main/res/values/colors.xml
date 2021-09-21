@@ -18,5 +18,12 @@
 
     <color name="pokemonColor1">#FFAF32</color>
 
+    <color name="stats_HP">#E64556</color>
+    <color name="stats_attack">#F10482</color>
+    <color name="stats_defense">#0077BC</color>
+    <color name="stats_spAttack">#7A29AC</color>
+    <color name="stats_spDefense">#065A9C</color>
+    <color name="stats_speed">#49896F</color>
+
 
 </resources>

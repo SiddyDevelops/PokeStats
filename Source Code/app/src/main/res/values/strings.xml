@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">PokéStats</string>
     <string name="search">Search Pokémon</string>
+    <string name="hp">HP</string>
+    <string name="attack">Attack</string>
+    <string name="defense">Defense</string>
+    <string name="special_attack">Special\nAttack</string>
+    <string name="special_defense">Special\nDefense</string>
+    <string name="speed">Speed</string>
 </resources>
