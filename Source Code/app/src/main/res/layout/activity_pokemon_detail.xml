@@ -58,6 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="80dp"
+                    android:id="@+id/parentConstraintView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent">
@@ -155,7 +156,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:indeterminateOnly="false"
-                                android:progress="20"
+                                android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
@@ -167,7 +168,6 @@
                                 android:id="@+id/statTextView1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="90"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                                 app:layout_constraintBottom_toBottomOf="@+id/donutChart"
@@ -179,7 +179,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="HP"
+                                android:text="@string/hp"
+                                android:textColor="@color/stats_HP"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="@+id/donutChart"
                                 app:layout_constraintStart_toStartOf="@+id/donutChart"
@@ -196,7 +197,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:indeterminateOnly="false"
-                                android:progress="20"
+                                android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
@@ -208,7 +209,6 @@
                                 android:id="@+id/statTextView2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="90"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                                 app:layout_constraintBottom_toBottomOf="@+id/donutChart1"
@@ -220,7 +220,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="Attack"
+                                android:text="@string/attack"
+                                android:textColor="@color/stats_attack"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="@+id/donutChart1"
                                 app:layout_constraintStart_toStartOf="@+id/donutChart1"
@@ -237,7 +238,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:indeterminateOnly="false"
-                                android:progress="20"
+                                android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
@@ -249,7 +250,6 @@
                                 android:id="@+id/statTextView3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="90"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                                 app:layout_constraintBottom_toBottomOf="@+id/donutChart2"
@@ -261,7 +261,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="Defense"
+                                android:text="@string/defense"
+                                android:textColor="@color/stats_defense"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="@+id/donutChart2"
                                 app:layout_constraintStart_toStartOf="@+id/donutChart2"
@@ -284,11 +285,11 @@
                             android:layout_height="match_parent">
 
                             <ProgressBar
-                                android:id="@+id/donutChart4"
+                                android:id="@+id/donutChart3"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:indeterminateOnly="false"
-                                android:progress="20"
+                                android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
@@ -297,10 +298,51 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/statTextView3"
+                                android:id="@+id/statTextView4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="90"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                app:layout_constraintBottom_toBottomOf="@+id/donutChart3"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart3"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart3"
+                                app:layout_constraintTop_toTopOf="@+id/donutChart3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:textAlignment="center"
+                                android:text="@string/special_attack"
+                                android:textColor="@color/stats_spAttack"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="@+id/donutChart3"
+                                app:layout_constraintStart_toStartOf="@+id/donutChart3"
+                                app:layout_constraintTop_toBottomOf="@+id/donutChart3" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:id="@+id/donutChart4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:indeterminateOnly="false"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/donut_chart"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintCircleRadius="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/statTextView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                                 app:layout_constraintBottom_toBottomOf="@+id/donutChart4"
@@ -312,7 +354,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="Special\nAttack"
+                                android:textAlignment="center"
+                                android:text="@string/special_defense"
+                                android:textColor="@color/stats_spDefense"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="@+id/donutChart4"
                                 app:layout_constraintStart_toStartOf="@+id/donutChart4"
@@ -338,10 +382,9 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/statTextView4"
+                                android:id="@+id/statTextView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="90"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                                 app:layout_constraintBottom_toBottomOf="@+id/donutChart5"
@@ -353,52 +396,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="Special\nDefense"
+                                android:text="@string/speed"
+                                android:textColor="@color/stats_speed"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="@+id/donutChart5"
                                 app:layout_constraintStart_toStartOf="@+id/donutChart5"
                                 app:layout_constraintTop_toBottomOf="@+id/donutChart5" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ProgressBar
-                                android:id="@+id/donutChart6"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:indeterminateOnly="false"
-                                android:progress="20"
-                                android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintCircleRadius="10dp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/statTextView5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="90"
-                                android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                app:layout_constraintBottom_toBottomOf="@+id/donutChart6"
-                                app:layout_constraintEnd_toEndOf="@+id/donutChart6"
-                                app:layout_constraintStart_toStartOf="@+id/donutChart6"
-                                app:layout_constraintTop_toTopOf="@+id/donutChart6" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat_semi_bold_itialic"
-                                android:text="Speed"
-                                android:textSize="18sp"
-                                app:layout_constraintEnd_toEndOf="@+id/donutChart6"
-                                app:layout_constraintStart_toStartOf="@+id/donutChart6"
-                                app:layout_constraintTop_toBottomOf="@+id/donutChart6" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
