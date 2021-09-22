@@ -19,10 +19,10 @@
             <com.github.ybq.android.spinkit.SpinKitView
                 android:id="@+id/spin_kit"
                 style="@style/SpinKitView.Large.FadingCircle"
-                android:layout_width="62dp"
-                android:layout_height="53dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:elevation="25dp"
-                app:SpinKit_Color="@color/pokemonColor1"
+                app:SpinKit_Color="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="371dp"
-                android:layout_height="621dp"
+                android:layout_height="600dp"
                 android:layout_marginTop="115dp"
                 android:layout_marginBottom="5dp"
                 android:elevation="10dp"
@@ -76,15 +76,77 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:id="@+id/linearLayoutCompat"
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/nameOfPokemon">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/typecardView1"
+                            android:layout_marginEnd="5dp"
+                            app:cardCornerRadius="15dp"
+                            android:backgroundTint="@color/pokemonColor1"
+                            android:elevation="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/typeTextView1"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="POISON" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/typecardView2"
+                            android:layout_marginStart="5dp"
+                            app:cardCornerRadius="15dp"
+                            android:backgroundTint="@color/pokemonColor1"
+                            android:elevation="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/typeTextView2"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/montserrat_semi_bold_itialic"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="NORMAL" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearLayoutCompat"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -142,6 +204,7 @@
                         android:id="@+id/linearLayout3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +221,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -199,7 +261,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -240,7 +301,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -291,7 +351,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -333,7 +392,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="0"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -375,7 +433,6 @@
                                 android:indeterminateOnly="false"
                                 android:progress="20"
                                 android:progressDrawable="@drawable/donut_chart"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintCircleRadius="10dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"

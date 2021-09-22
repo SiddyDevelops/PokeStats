@@ -2,6 +2,7 @@ package com.siddydevelops.pokstats;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
 
@@ -26,6 +27,8 @@ import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.siddydevelops.pokstats.Models.PokeDetail;
 import com.siddydevelops.pokstats.Models.PokeStats;
+import com.siddydevelops.pokstats.Models.PokeType;
+import com.siddydevelops.pokstats.Models.Type;
 import com.siddydevelops.pokstats.PokeApi.PokeApiService;
 
 import java.util.ArrayList;
@@ -63,6 +66,11 @@ public class PokemonDetailActivity extends AppCompatActivity {
     ProgressBar donutChart5;
     TextView statTextView6;
 
+    CardView typeCardView1;
+    CardView typeCardView2;
+    TextView typeTextView1;
+    TextView typeTextView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +83,11 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
         parentConstraintView = findViewById(R.id.parentConstraintView);
         parentConstraintView.setVisibility(View.INVISIBLE);
+
+        typeCardView1 = findViewById(R.id.typecardView1);
+        typeCardView2 = findViewById(R.id.typecardView2);
+        typeTextView1 = findViewById(R.id.typeTextView1);
+        typeTextView2 = findViewById(R.id.typeTextView2);
 
         progressBar = findViewById(R.id.spin_kit);
         Sprite fadingCircle = new FadingCircle();
@@ -141,8 +154,18 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 Log.i("Weight", pokeDetails.getWeight());
                 List<PokeStats> p = pokeDetails.getStats();
                 Log.i("ListDATA", p.toString());
+                List<PokeType> pokeTypes = pokeDetails.getTypes();
+                Log.i("TYPE-DATA",pokeTypes.toString());
 
                 parentConstraintView.setVisibility(View.VISIBLE);
+
+                typeTextView1.setText(pokeTypes.get(0).toString());
+                if(pokeTypes.size() < 2)
+                {
+                    typeCardView2.setVisibility(View.GONE);
+                } else {
+                    typeTextView2.setText(pokeTypes.get(1).toString());
+                }
 
                 nameOfPokemon.setText(pokeDetails.getName());
                 heightTextView.setText(pokeDetails.getHeight() + " KG");
