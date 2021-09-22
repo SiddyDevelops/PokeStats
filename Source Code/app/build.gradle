@@ -46,5 +46,6 @@ dependencies {
 
     //Loading animation
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'com.github.sunil-singh-chaudhary:Cat-Loading-Dialog:924bc4013b'
 
 }

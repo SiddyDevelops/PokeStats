@@ -18,4 +18,7 @@ public interface PokeApiService {
     @GET("pokemon/{poke_num}")
     Call<PokeDetail> getPokeDetails(@Path("poke_num") int poke_num);
 
+    @GET("pokemon/{poke_name}")
+    Call<PokeDetail> getPokeDetailsV(@Path("poke_name") String poke_name);
+
 }
