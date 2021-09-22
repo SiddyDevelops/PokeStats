@@ -5,9 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.roger.catloadinglibrary.CatLoadingView;
+import com.siddydevelops.pokstats.Models.PokeDetail;
 import com.siddydevelops.pokstats.Models.Pokemon;
 import com.siddydevelops.pokstats.Models.PokemonRequests;
 import com.siddydevelops.pokstats.PokeApi.PokeApiService;
@@ -25,8 +36,13 @@ public class PokemonListActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
 
+    EditText searchEditText;
+    ImageView pokeBallImageView;
+
     RecyclerView pokemonListRV;
     PokemonListAdapter pokemonListAdapter;
+
+    CatLoadingView catLoadingView;
 
     private int offset;
     private boolean pageChange;
@@ -35,6 +51,34 @@ public class PokemonListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_list);
+
+        catLoadingView = new CatLoadingView();
+        catLoadingView.show(getSupportFragmentManager(), "");
+
+        searchEditText = findViewById(R.id.searchEditText);
+        pokeBallImageView = findViewById(R.id.pokeBallImageView);
+
+        pokeBallImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pokemonName = searchEditText.getText().toString().toLowerCase().replace(" ","");
+                catLoadingView.show(getSupportFragmentManager(), "");
+                getPokemonDetailsBySearch(pokemonName);
+            }
+        });
+
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_GO) {
+                    Log.i("INFO-->",searchEditText.getText().toString());
+                    String pokemonName = searchEditText.getText().toString().toLowerCase().replace(" ","");
+                    catLoadingView.show(getSupportFragmentManager(), "");
+                    getPokemonDetailsBySearch(pokemonName);
+                }
+                return false;
+            }
+        });
 
         pokemonListRV = findViewById(R.id.pokemonListRV);
         pokemonListAdapter = new PokemonListAdapter();
@@ -53,6 +97,7 @@ public class PokemonListActivity extends AppCompatActivity {
 
                     if(pageChange){
                         if((visibleItemCount + pastVisibleItem) >= totalItemCount){
+                            catLoadingView.show(getSupportFragmentManager(), "");
                             Log.i("PAGE-->", "PageChange");
                             pageChange = false;
                             offset += 20;
@@ -71,6 +116,45 @@ public class PokemonListActivity extends AppCompatActivity {
         pageChange = true;
         offset = 0;
         getData(offset);
+    }
+
+    private void getPokemonDetailsBySearch(String pokemonName) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://pokeapi.co/api/v2/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        PokeApiService pokeApiService = retrofit.create(PokeApiService.class);
+
+        Call<PokeDetail> call = pokeApiService.getPokeDetailsV(pokemonName);
+
+        call.enqueue(new Callback<PokeDetail>() {
+            @Override
+            public void onResponse(Call<PokeDetail> call, Response<PokeDetail> response) {
+                if(!response.isSuccessful()){
+                    Log.i("ERROR", "onResponse: " + response.code());
+                }
+                PokeDetail pokeDetails = response.body();
+                if(pokeDetails == null)
+                {
+                    Toast.makeText(PokemonListActivity.this, "No such Pokémon Exists!", Toast.LENGTH_SHORT).show();
+                    catLoadingView.dismiss();
+                    searchEditText.setText("");
+                    recreate();
+                }
+                else{
+                    Intent intent = new Intent(getApplicationContext(), PokemonDetailActivity.class);
+                    intent.putExtra("pokeNum", pokeDetails.getId());
+                    catLoadingView.dismiss();
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PokeDetail> call, Throwable t) {
+                Log.i("ERROR", t.getMessage());
+            }
+        });
+
     }
 
     private void getData(int offset) {
@@ -92,6 +176,7 @@ public class PokemonListActivity extends AppCompatActivity {
 //                        Log.i("POKEMON_URL: ", pokemon.getUrl());
 //                    }
                     pokemonListAdapter.addPokemonToList(listOfPokemons);
+                    catLoadingView.dismiss();
 
                 } else {
                     Log.i("Error","onResponse: " + response.errorBody());
@@ -104,6 +189,6 @@ public class PokemonListActivity extends AppCompatActivity {
                 Log.i("Error","onFailure: " + t.getMessage());
             }
         });
-
     }
+
 }

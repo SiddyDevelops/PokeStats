@@ -135,6 +135,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
                 }
 
                 PokeDetail pokeDetails = response.body();
+                Log.i("ID", String.valueOf(pokeDetails.getId()));
                 Log.i("NAME", pokeDetails.getName());
                 Log.i("Height", pokeDetails.getHeight());
                 Log.i("Weight", pokeDetails.getWeight());

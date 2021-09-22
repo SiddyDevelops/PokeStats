@@ -7,6 +7,7 @@ import java.util.List;
 
 public class PokeDetail {
 
+    private int id;
     private String name;
     private String height;
     private String weight;
@@ -47,4 +48,11 @@ public class PokeDetail {
         this.weight = weight;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
