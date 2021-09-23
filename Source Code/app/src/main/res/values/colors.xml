@@ -18,6 +18,7 @@
 
     <color name="pokemonColor1">#FFAF32</color>
 
+    <!-- Pokemon Stats -->
     <color name="stats_HP">#E64556</color>
     <color name="stats_attack">#F10482</color>
     <color name="stats_defense">#0077BC</color>
@@ -25,5 +26,19 @@
     <color name="stats_spDefense">#065A9C</color>
     <color name="stats_speed">#49896F</color>
 
+    <!-- Pokemon Types -->
+    <color name="fighting">#7F6F62</color>
+    <color name="flying">#BD92AF</color>
+    <color name="poison">#49896F</color>
+    <color name="ground">#89C893</color>
+    <color name="rock">#7F6F62</color>
+    <color name="bug">#BD92AF</color>
+    <color name="fire">#FFE26F</color>
+    <color name="grass">#89C893</color>
+    <color name="water">#29738F</color>
+    <color name="electric">#FFE26F</color>
+    <color name="ice">#ECF0F3</color>
+    <color name="dragon">#5782A6</color>
+    <color name="normal">#7C6EBB</color>
 
 </resources>

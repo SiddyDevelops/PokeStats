@@ -44,6 +44,8 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
     //https://pokeapi.co/api/v2/pokemon/{poke_num}  --> DETAIL API
 
+    ConstraintLayout constraintParent;
+
     TextView nameOfPokemon;
     ImageView pokemonImageView;
     TextView heightTextView;
@@ -75,6 +77,8 @@ public class PokemonDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_detail);
+
+        constraintParent = findViewById(R.id.constraintParent);
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -165,6 +169,66 @@ public class PokemonDetailActivity extends AppCompatActivity {
                     typeCardView2.setVisibility(View.GONE);
                 } else {
                     typeTextView2.setText(pokeTypes.get(1).toString());
+                }
+
+                switch(pokeTypes.get(0).toString())
+                {
+                    case "fighting":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.fighting));
+                        window.setStatusBarColor(getResources().getColor(R.color.fighting));
+                        break;
+                    case "flying":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.flying));
+                        window.setStatusBarColor(getResources().getColor(R.color.flying));
+                        break;
+                    case "poison":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.poison));
+                        window.setStatusBarColor(getResources().getColor(R.color.poison));
+                        break;
+                    case "ground":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.ground));
+                        window.setStatusBarColor(getResources().getColor(R.color.ground));
+                        break;
+                    case "rock":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.rock));
+                        window.setStatusBarColor(getResources().getColor(R.color.rock));
+                        break;
+                    case "bug":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.bug));
+                        window.setStatusBarColor(getResources().getColor(R.color.bug));
+                        break;
+                    case "fire":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.fire));
+                        window.setStatusBarColor(getResources().getColor(R.color.fire));
+                        break;
+                    case "grass":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.grass));
+                        window.setStatusBarColor(getResources().getColor(R.color.grass));
+                        break;
+                    case "water":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.water));
+                        window.setStatusBarColor(getResources().getColor(R.color.water));
+                        break;
+                    case "electric":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.electric));
+                        window.setStatusBarColor(getResources().getColor(R.color.electric));
+                        break;
+                    case "ice":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.ice));
+                        window.setStatusBarColor(getResources().getColor(R.color.ice));
+                        break;
+                    case "dragon":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.dragon));
+                        window.setStatusBarColor(getResources().getColor(R.color.dragon));
+                        break;
+                    case "normal":
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.normal));
+                        window.setStatusBarColor(getResources().getColor(R.color.normal));
+                        break;
+                    default:
+                        constraintParent.setBackgroundColor(getResources().getColor(R.color.pokemonColor1));
+                        window.setStatusBarColor(getResources().getColor(R.color.pokemonColor1));
+                        break;
                 }
 
                 nameOfPokemon.setText(pokeDetails.getName());
