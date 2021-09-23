@@ -12,9 +12,21 @@ public class PokeDetail {
     private String height;
     private String weight;
 
+    @SerializedName("types")
+    @Expose
+    private List<PokeType> types = null;
+
     @SerializedName("stats")
     @Expose
     private List<PokeStats> stats = null;
+
+    public List<PokeType> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<PokeType> types) {
+        this.types = types;
+    }
 
     public List<PokeStats> getStats() {
         return stats;
