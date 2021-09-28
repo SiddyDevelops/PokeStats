@@ -16,3 +16,12 @@ An Android App which displays description about a certain Pokémon.
 <p>Pokémon (an abbreviation for Pocket Monsters in Japan) is a Japanese media franchise managed by The Pokémon Company, a company founded by Nintendo, Game Freak, and Creatures. In Pokémon, humans, known as Pokémon Trainers, catch and train Pokémon to battle other Pokémon for sport. This android app take the user back in time when Pokémon Trading Cards were popular. </p>
 
 
+<br></br>
+
+---
+
+
+
+## Features of the App:
+
+
