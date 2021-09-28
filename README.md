@@ -30,11 +30,11 @@ An Android App which displays description about a certain Pokémon.
  
  
  <p align="center">
-  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135019779-6f39a2d2-4531-4e3f-8691-e3fe0ce27a0b.jpg">
+  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135019886-73dd0154-5f6c-44f4-913f-c7a316279bd8.jpg">  
   <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135019857-361cdecb-b9e7-4ba5-9c43-b29affe0f33d.jpg">
-  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135019886-73dd0154-5f6c-44f4-913f-c7a316279bd8.jpg">
- <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135020025-a52d6af9-a381-4223-9ff1-68a07180c26f.jpg">
- <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135020028-3c5ed32d-b2e9-43c6-a3ce-ed573d63332d.jpg">
+  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135019779-6f39a2d2-4531-4e3f-8691-e3fe0ce27a0b.jpg">
+  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135020025-a52d6af9-a381-4223-9ff1-68a07180c26f.jpg">
+  <img width="180" height="400" src="https://user-images.githubusercontent.com/72121163/135020028-3c5ed32d-b2e9-43c6-a3ce-ed573d63332d.jpg">
 </p>
 <br/>
 
