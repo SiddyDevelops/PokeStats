@@ -40,6 +40,16 @@ An Android App which displays description about a certain Pokémon.
 
 ---
 
+## From the Developer:
+
+This Android App is developed by <a href="https://github.com/SiddyDevelops">Siddharth Singh<a/>. The vector-icons and images used while designing this app is taken from various websites including <a href="https://icons8.com/">Icons-8<a/>. Hence I do not own these icons.
+  
+Follow my <a href="https://github.com/SiddyDevelops#connect-with-me">Social Handles<a/> for more projects.
+  
+Enjoy Coding!! 🚀 ✨
+  
+---
+
 
 
 
