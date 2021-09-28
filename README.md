@@ -23,5 +23,9 @@ An Android App which displays description about a certain Pokémon.
 
 
 ## Features of the App:
+- This app consists of more than 10,000 Pokémon to select from. 
+- You can select a pokemon preview it, read its base stats, check the type. 
+- You can search a pokemon by its name.
+- The backgoround color of the PokéStat depends on the Pokémon's type.
 
 
